@@ -1,6 +1,7 @@
 package murraco;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 
@@ -48,6 +49,13 @@ public class SortingAlgorithmsTest {
     final Integer[] data = {4, 3, 0, 11, 7, 5, 15, 12, 99, 1};
     Heapsort.heapSort(data);
     assertEquals("[0, 1, 3, 4, 5, 7, 11, 12, 15, 99]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testHeapSortRightChildCalculation() {
+    final Integer[] data = {10, 3, 8, 7, 2, 5, 4}; 
+    Heapsort.maxHeapify(data, 1, data.length - 1); 
+    assertEquals("[10, 7, 8, 3, 2, 5, 4]", Arrays.toString(data));
   }
 
   @Test
